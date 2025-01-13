@@ -3,12 +3,14 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'defaultProjectId';
+const dataset = process.env.SANITY_STUDIO_DATASET || 'production';
+
 export default defineConfig({
   name: 'default',
   title: 'ecommerce-build',
-
-  projectId: 'qjrcqhoi',
-  dataset: 'production',
+  projectId,
+  dataset,
 
   plugins: [structureTool(), visionTool()],
 
